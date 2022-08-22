@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Button from "./Button";
+import "./stylesheets/Content.css"
 
 const Content = () => {
   const [text, setText] = useState("");
@@ -66,7 +67,7 @@ const Content = () => {
             onChange={handleOnChange}
             className="form-control"
             id="exampleFormControlTextarea1"
-            rows="10"
+            rows="18"
           ></textarea>
         </div>
       </div>

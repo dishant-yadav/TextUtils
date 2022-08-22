@@ -5,7 +5,7 @@ const Button = (props) => {
   return (
     <button
       className={"btn btn-" + props.btnColor + " mx-2"}
-      onClick= {props.btnFunction}
+      onClick={props.btnFunction}
     >
       {props.btnText}
     </button>

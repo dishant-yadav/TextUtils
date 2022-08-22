@@ -1,17 +1,24 @@
 import React from "react";
-import DarkModeButton from "./DarkModeButton";
-import "./stylesheets/header.css";
 import PropTypes from "prop-types";
+import Button from "./Button";
+import "./stylesheets/header.css";
 
 const Header = (props) => {
+  const handleClick = () => {
+    const body = document.querySelector("body");
+    const header = document.querySelector("header");
+    body.style.backgroundColor = "white";
+    header.style.backgroundColor = "wheat";
+    console.log("Clicked dark mode btn");
+  };
   const headerStyle = {
     backgroundColor: props.bgColor,
     color: "white",
   };
   return (
-    <header className="bg-primary" style={headerStyle}>
+    <header style={headerStyle}>
       <h1>{props.title}</h1>
-      <DarkModeButton />
+      <button className="btn btn-primary" onClick={handleClick}>Enable Dark Mode</button>
     </header>
   );
 };
@@ -19,12 +26,10 @@ const Header = (props) => {
 Header.propTypes = {
   title: PropTypes.string.isRequired,
   bgColor: PropTypes.string,
-  mode: PropTypes.string,
 };
 Header.defaultProps = {
   title: "Enter your text here",
   bgColor: "red",
-  mode: "light",
 };
 
 export default Header;
