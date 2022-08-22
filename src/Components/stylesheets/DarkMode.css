@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: white;
+  transition: 1s;
+}
+.switch {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px;
+  position: relative;
+  bottom: 65px;
+}
+.btn {
+  visibility: hidden;
+}
+.label {
+  position: relative;
+  width: 80px;
+  height: 40px;
+  background-color: darkgray;
+  border-radius: 20px;
+  transform: scale(0.7);
+}
+.circle {
+  position: absolute;
+  top: 3px;
+  left: 2px;
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;
+  background-color: white;
+  animation: toggleOff 0.4s linear forwards;
+}
+.btn:checked + .label {
+  background-color: white;
+}
+.btn:checked + .label .circle {
+  background-color: black;
+  animation: toggleOn 0.4s linear forwards;
+}
+
+@keyframes toggleOn {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(40px);
+  }
+}
+
+@keyframes toggleOff {
+  0% {
+    transform: translateX(40px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
