@@ -1,13 +1,13 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-    background-color: grey;
+body {
+  background-color: #d8bf90;
 }
-#exampleFormControlTextarea1 {
-    font-size: 22px;
-    font-weight: 400;
-    background-color: wheat;
+#textarea {
+  font-size: 22px;
+  font-weight: 400;
+  background-color: wheat;
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Button from "./Button";
-import "./stylesheets/Content.css"
+import "./stylesheets/Content.css";
 
 const Content = () => {
   const [text, setText] = useState("");
@@ -58,16 +58,15 @@ const Content = () => {
     <div className="container">
       <div className="row">
         <div className="col-12">
-          <label htmlFor="exampleFormControlTextarea1" className="form-label">
-            Place your text and see the magic
-          </label>
+          <label htmlFor="textarea" className="form-label"></label>
           <textarea
             spellCheck={false}
             value={text}
+            placeholder="Place your text and see the magic"
             onChange={handleOnChange}
-            className="form-control"
-            id="exampleFormControlTextarea1"
-            rows="18"
+            className="form-control my-4"
+            id="textarea"
+            rows="15"
           ></textarea>
         </div>
       </div>
