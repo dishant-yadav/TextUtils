@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./stylesheets/button.css"
 
 const Button = (props) => {
   return (
     <button
-      className={"btn btn-" + props.btnColor + " mx-2"}
+      className={"btn btn-" + props.btnColor + " mx-2 my-2"}
       onClick={props.btnFunction}
     >
       {props.btnText}
