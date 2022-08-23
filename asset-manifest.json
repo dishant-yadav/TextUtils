@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/dishant-yadav/TextUtils/static/css/main.b36f7659.css",
+    "main.js": "/dishant-yadav/TextUtils/static/js/main.c7ea1c88.js",
+    "index.html": "/dishant-yadav/TextUtils/index.html",
+    "main.b36f7659.css.map": "/dishant-yadav/TextUtils/static/css/main.b36f7659.css.map",
+    "main.c7ea1c88.js.map": "/dishant-yadav/TextUtils/static/js/main.c7ea1c88.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b36f7659.css",
+    "static/js/main.c7ea1c88.js"
+  ]
+}
