@@ -27,7 +27,13 @@ const Content = () => {
       word = word.charAt(0).toUpperCase() + word.slice(1);
       capitalize += word + " ";
     }
-    setText(capitalize.trim());
+    const wordsNextLine = capitalize.split("\n");
+    let capitalizeNextLine = "";
+    for (let word of wordsNextLine) {
+      word = word.charAt(0).toUpperCase() + word.slice(1);
+      capitalizeNextLine += word + "\n";
+    }
+    setText(capitalizeNextLine.trim());
     // console.log("Clicked capitalize");
   };
   const handleToggleCase = () => {
