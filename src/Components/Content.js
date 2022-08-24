@@ -24,10 +24,16 @@ const Content = () => {
     const words = text.split(" ");
     let capitalize = "";
     for (let word of words) {
-      word = word.charAt(0).toUpperCase() + word.slice(1);
+      word = word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
       capitalize += word + " ";
     }
-    setText(capitalize.trim());
+    const wordsNextLine = capitalize.split("\n");
+    let capitalizeNextLine = "";
+    for (let word of wordsNextLine) {
+      word = word.charAt(0).toUpperCase() + word.slice(1);
+      capitalizeNextLine += word + "\n";
+    }
+    setText(capitalizeNextLine.trim());
     // console.log("Clicked capitalize");
   };
   const handleToggleCase = () => {
