@@ -13,7 +13,7 @@ const Content = () => {
   const buttons = document.getElementsByClassName("btn");
   const handleDisabled = () => {
     for (let button of buttons) {
-      if (text.length === 0) {
+      if (!text) {
         button.setAttribute("disabled", "");
       } else {
         button.removeAttribute("disabled");
