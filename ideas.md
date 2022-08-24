@@ -4,7 +4,8 @@
 
 - To add summary for the contents of the textbox value like
   - Word count
-  - Word count
+  - character count
+  - line count
   - para count
   - reading time (0.4 min to read a 125 words [0.008]sec to read a word)
 - Case converter
@@ -17,4 +18,4 @@
   - toggle case
   - pascal case
   - programmer's (camelCase, snakecase)
-  (https://titlecaseconverter.com/)[For inspiration]
+    (https://titlecaseconverter.com/)[For inspiration]
