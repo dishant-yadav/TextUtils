@@ -9,6 +9,17 @@ const Content = () => {
     setText(event.target.value);
     // console.log("Clicked Changes");
   };
+  // logic to disable the buttons when there is no text
+  const buttons = document.getElementsByClassName("btn");
+  const handleDisabled = () => {
+    for (let button of buttons) {
+      if (text.length === 0) {
+        button.setAttribute("disabled", "");
+      } else {
+        button.removeAttribute("disabled");
+      }
+    }
+  };
   const handleUppercase = () => {
     const upperCase = text.toUpperCase();
     setText(upperCase);
@@ -60,6 +71,8 @@ const Content = () => {
     setText(clear);
     // console.log("Clicked clear");
   };
+
+  handleDisabled();
   return (
     <div className="container">
       <div className="row">
