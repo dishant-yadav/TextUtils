@@ -9,17 +9,6 @@ const Content = () => {
     setText(event.target.value);
     // console.log("Clicked Changes");
   };
-  // logic to disable the buttons when there is no text
-  const buttons = document.getElementsByClassName("btn");
-  const handleDisabled = () => {
-    for (let button of buttons) {
-      if (!text) {
-        button.setAttribute("disabled", "");
-      } else {
-        button.removeAttribute("disabled");
-      }
-    }
-  };
   const handleUppercase = () => {
     const upperCase = text.toUpperCase();
     setText(upperCase);
@@ -72,7 +61,16 @@ const Content = () => {
     // console.log("Clicked clear");
   };
 
-  handleDisabled();
+  // logic to disable the buttons when there is no text
+  const handleDisabled = () => {
+    if (!text) {
+      return "true";
+    } else {
+      return "";
+    }
+  };
+  const isDisabled = handleDisabled();
+
   return (
     <div className="container">
       <div className="row">
@@ -95,24 +93,38 @@ const Content = () => {
             btnColor="primary"
             btnFunction={handleUppercase}
             btnText="Convert to Upper Case"
+            isDisabled={isDisabled}
           />
           <Button
             btnColor="secondary"
             btnFunction={handleLowercase}
             btnText="Convert to Lower Case"
+            isDisabled={isDisabled}
           />
           <Button
             btnColor="danger"
             btnFunction={handleCapiatlize}
             btnText="Convert to Capitalize"
+            isDisabled={isDisabled}
           />
           <Button
             btnColor="warning"
             btnFunction={handleToggleCase}
             btnText="Convert to Toggle Case"
+            isDisabled={isDisabled}
           />
-          <Button btnColor="success" btnFunction={handleCopy} btnText="Copy" />
-          <Button btnColor="dark" btnFunction={handleClear} btnText="Clear" />
+          <Button
+            btnColor="success"
+            btnFunction={handleCopy}
+            btnText="Copy"
+            isDisabled={isDisabled}
+          />
+          <Button
+            btnColor="dark"
+            btnFunction={handleClear}
+            btnText="Clear"
+            isDisabled={isDisabled}
+          />
         </div>
       </div>
     </div>
