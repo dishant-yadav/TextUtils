@@ -24,7 +24,7 @@ const Content = () => {
     const words = text.split(" ");
     let capitalize = "";
     for (let word of words) {
-      word = word.charAt(0).toUpperCase() + word.slice(1);
+      word = word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
       capitalize += word + " ";
     }
     const wordsNextLine = capitalize.split("\n");
