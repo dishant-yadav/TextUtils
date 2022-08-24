@@ -9,36 +9,40 @@ const Content = () => {
     setText(event.target.value);
     // console.log("Clicked Changes");
   };
+
   const handleUppercase = () => {
     const upperCase = text.toUpperCase();
     setText(upperCase);
     // console.log("Clicked Uppercase");
   };
+
   const handleLowercase = () => {
     const lowerCase = text.toLowerCase();
     setText(lowerCase);
     // console.log("Clicked lowercase");
   };
+
   const handleCapiatlize = () => {
-    setText(text.trim());
-    const words = text.split(" ");
-    let capitalize = "";
-    for (let word of words) {
-      word = word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-      capitalize += word + " ";
+    let newText = text.toLowerCase();
+    const arr = newText.split(" ");
+    for (let i = 0; i < arr.length; i++) {
+      arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
     }
-    const wordsNextLine = capitalize.split("\n");
-    let capitalizeNextLine = "";
-    for (let word of wordsNextLine) {
-      word = word.charAt(0).toUpperCase() + word.slice(1);
-      capitalizeNextLine += word + "\n";
+    newText = arr.join(" ");
+    let capitalizedText = "";
+    const lines = newText.split("\n");
+    for (let line of lines) {
+      line = line.charAt(0).toUpperCase() + line.slice(1);
+      capitalizedText += line + "\n";
     }
-    setText(capitalizeNextLine.trim());
-    // console.log("Clicked capitalize");
+    console.log(capitalizedText);
+    setText(capitalizedText);
   };
+
   const handleToggleCase = () => {
     // console.log("Clicked Togglecase");
   };
+
   function handleCopy() {
     if (text !== "") {
       navigator.clipboard
@@ -63,10 +67,10 @@ const Content = () => {
 
   // logic to disable the buttons when there is no text
   const handleDisabled = () => {
-    if (!text) {
-      return "true";
+    if (!text.trim()) {
+      return true;
     } else {
-      return "";
+      return false;
     }
   };
   const isDisabled = handleDisabled();
@@ -79,7 +83,7 @@ const Content = () => {
           <textarea
             spellCheck={false}
             value={text}
-            placeholder="Place your text and see the magic"
+            placeholder="Type or paste your text and see the magic"
             onChange={handleOnChange}
             className="form-control my-4"
             id="textarea"

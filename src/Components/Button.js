@@ -21,13 +21,13 @@ Button.propTypes = {
   btnColor: PropTypes.string,
   btnFunction: PropTypes.func.isRequired,
   btnText: PropTypes.string.isRequired,
-  isDisabled: PropTypes.string.isRequired,
+  isDisabled: PropTypes.bool.isRequired,
 };
 Button.defaultProps = {
   btnColor: "Primary",
   btnFunction: handleClick(),
   btnText: "Click",
-  isDisabled: "",
+  isDisabled: true,
 };
 
 export default Button;
